@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block title %} Online Test Candidate Page {%endblock title %}
+
+{% block top %}
+{% endblock%}
+{% block content %}
+<h1>Welcome {{request.session.name}}, to your home page</h1>
+<div class="button-link">
+    <a href="{% url 'ots1:test' %}?n=1">test of 1 questions</a>
+
+</div>
+<div class="button-link">
+    <a href="{% url 'ots1:test' %}?n=3">test of 3 questions</a>
+
+</div>
+<div class="button-link">
+    <a href="{% url 'ots1:test' %}?n=5">test of 5 questions</a>
+
+</div>
+<div class="button-link">
+    <a href="{% url 'ots1:testHistory' %}">test History</a>
+
+</div>
+<a href="{% url 'ots1:logout' %}">logout</a>
+{% endblock%}

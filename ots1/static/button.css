@@ -1,0 +1,17 @@
+.button-link{
+    width:100px;
+    height:50px;
+    background-color:rgb(4, 184, 249);
+    margin-bottom:20px;
+    padding:20px;
+    border-radius:5px;
+    text-align:center;
+    box-shadow: 10px 10px;
+
+}
+.button-link a{
+    text-decoration :none;
+    color:white;
+    font-size:22px;
+
+}

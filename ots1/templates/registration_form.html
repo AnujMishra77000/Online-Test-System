@@ -1,0 +1,26 @@
+{% extends 'main.html'%}
+
+{% block title%} Online test Registration Page
+{% endblock title %}
+
+{% block top %}
+<a href="{% url 'ots1:login' %}">login</a>
+{% endblock%}
+
+{% block content%}
+<div class="all-forms">
+    <form action="{% url 'ots1:savecandidate' %}" method="post">
+        {% csrf_token %}
+        <lable for="username">Username</lable>
+        <input type="text" name="username">
+        <lable for="password">password</lable>
+        <input type="password" name="password">
+        <lable for="name">Name</lable>
+        <input type="text" name="name">
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="clear">
+    </form>
+    Already have an account, <a href="{% url 'ots1:login' %}">Click Here</a>
+</div>
+{% endblock%}

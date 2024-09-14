@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block title%}Fill All Credentials Carefully
+{%endblock %}
+
+{% block top %}
+<a href="{% url 'ots1:registration' %}">Signup</a>
+<a href="{% url 'ots1:login' %}">login</a>
+{% endblock %}
+
+{% block content %}
+{% if userStatus == 1%}
+ <div class="userStatus">
+    Sorry, username already exist, please try different username.
+    <a href="{% url 'ots1:registration' %}">Back to Signup</a>
+
+ </div>
+{% elif userStatus == 2 %}
+  <div class="userStatus">
+    Congratulations!! Account is Created Successfully.
+    <a href="{% url 'ots1:login' %}">login</a>
+
+  </div>
+
+{% elif userStatus == 3%}
+  <div class="userStatus">
+    Oops XX Improper XX Request XX
+    <a href="{% url 'ots1:registration' %}">Back to Signup</a>
+
+  </div>
+{% endif%}
+{% endblock%}
+
+
+

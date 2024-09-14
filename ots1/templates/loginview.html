@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block title%}0nline test -L0gin
+{% endblock title%}
+
+{% block top %}
+<a href="{% url 'ots1:registration' %}">Signup</a>
+{% endblock%}
+
+{%block content %}
+ <div class="all-forms">
+    <form action="{% url 'ots1:login' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-unit">
+            <lable for="username">username</lable>
+            <input type="text" name="username">
+
+        </div>
+        <div class="form-unit">
+            <lable for="password">password</lable>
+            <input type="password" name="password">
+
+        </div>
+        <div class="form-unit">
+            <input type="submit" value="login">
+            <input type="reset" value="clear">
+        </div>
+    </form>
+    New user<a href="{% url 'ots1:registration' %}">Click Here</a>
+ </div>
+ {% endblock %}
